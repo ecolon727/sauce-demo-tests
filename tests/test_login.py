@@ -5,9 +5,7 @@ from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 
 
-def test_valid_login():
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-
+def test_valid_login(driver):
     login_page = LoginPage(driver)
     login_page.load()
     login_page.login("standard_user", "secret_sauce")
@@ -17,9 +15,7 @@ def test_valid_login():
     driver.quit()
 
 
-def test_add_to_cart():
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-
+def test_add_to_cart(driver):
     login_page = LoginPage(driver)
     login_page.load()
     login_page.login("standard_user", "secret_sauce")
